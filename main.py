@@ -47,8 +47,11 @@ def manage_messages():
         show_all_message()
     elif ans == "2":
         send_new_message()
-    else:
+    elif ans == "3":
         main_menu()
+    else:
+        print("ERROR!")
+        manage_messages()
 
 
 def show_all_contacts():
@@ -56,10 +59,10 @@ def show_all_contacts():
         for con in contacts:
             con.get_details()
             print("*********************************")
-        main_menu()
+        show_all_contacts()
     else:
         print("Your Contacts List is empty...")
-        main_menu()
+        show_all_contacts()
 
 
 def add_contact():
@@ -122,7 +125,7 @@ def search_contact():
         if not does_exist:
             print("There is no such name in your contacts.")
 
-    main_menu()
+    search_contact()
 
 
 def manage_contacts():
@@ -141,8 +144,11 @@ def manage_contacts():
         delete_contact()
     elif ans == "4":
         search_contact()
-    else:
+    elif ans == "5":
         main_menu()
+    else:
+        print("ERROR!")
+        manage_contacts()
 
 
 def main_menu():
@@ -155,8 +161,10 @@ def main_menu():
         manage_contacts()
     elif ans == "2":
         manage_messages()
+    else:
+        print("ERROR!")
+        main_menu()
 
 
 main_menu()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
